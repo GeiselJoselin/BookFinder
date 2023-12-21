@@ -15,6 +15,10 @@
 		4F5681352B34F19A00D509FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5681332B34F19A00D509FC /* LaunchScreen.storyboard */; };
 		4F5681432B34F1C200D509FC /* BookFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681422B34F1C200D509FC /* BookFinderTests.swift */; };
 		4F56814B2B34F6D300D509FC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F56814A2B34F6D300D509FC /* Alamofire */; };
+		4F56814E2B34F7A600D509FC /* GoogleBooksAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56814D2B34F7A600D509FC /* GoogleBooksAPIManager.swift */; };
+		4F5681512B34F8B100D509FC /* BookDetailsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681502B34F8B100D509FC /* BookDetailsData.swift */; };
+		4F5681532B34F8DD00D509FC /* VolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681522B34F8DD00D509FC /* VolumeData.swift */; };
+		4F5681552B34FA5200D509FC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681542B34FA5200D509FC /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		4F5681362B34F19A00D509FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F5681402B34F1C200D509FC /* BookFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5681422B34F1C200D509FC /* BookFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderTests.swift; sourceTree = "<group>"; };
+		4F56814D2B34F7A600D509FC /* GoogleBooksAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksAPIManager.swift; sourceTree = "<group>"; };
+		4F5681502B34F8B100D509FC /* BookDetailsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsData.swift; sourceTree = "<group>"; };
+		4F5681522B34F8DD00D509FC /* VolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeData.swift; sourceTree = "<group>"; };
+		4F5681542B34FA5200D509FC /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,8 @@
 		4F5681272B34F19700D509FC /* BookFinder */ = {
 			isa = PBXGroup;
 			children = (
+				4F56814F2B34F88C00D509FC /* Models */,
+				4F56814C2B34F77200D509FC /* Networking */,
 				4F5681282B34F19700D509FC /* AppDelegate.swift */,
 				4F56812A2B34F19700D509FC /* SceneDelegate.swift */,
 				4F56812C2B34F19700D509FC /* ViewController.swift */,
@@ -97,6 +107,24 @@
 				4F5681422B34F1C200D509FC /* BookFinderTests.swift */,
 			);
 			path = BookFinderTests;
+			sourceTree = "<group>";
+		};
+		4F56814C2B34F77200D509FC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4F56814D2B34F7A600D509FC /* GoogleBooksAPIManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4F56814F2B34F88C00D509FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F5681502B34F8B100D509FC /* BookDetailsData.swift */,
+				4F5681522B34F8DD00D509FC /* VolumeData.swift */,
+				4F5681542B34FA5200D509FC /* Constant.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +234,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F5681552B34FA5200D509FC /* Constant.swift in Sources */,
 				4F56812D2B34F19700D509FC /* ViewController.swift in Sources */,
 				4F5681292B34F19700D509FC /* AppDelegate.swift in Sources */,
+				4F56814E2B34F7A600D509FC /* GoogleBooksAPIManager.swift in Sources */,
 				4F56812B2B34F19700D509FC /* SceneDelegate.swift in Sources */,
+				4F5681512B34F8B100D509FC /* BookDetailsData.swift in Sources */,
+				4F5681532B34F8DD00D509FC /* VolumeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
