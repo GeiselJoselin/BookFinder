@@ -14,6 +14,7 @@
 		4F5681322B34F19A00D509FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5681312B34F19A00D509FC /* Assets.xcassets */; };
 		4F5681352B34F19A00D509FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5681332B34F19A00D509FC /* LaunchScreen.storyboard */; };
 		4F5681432B34F1C200D509FC /* BookFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681422B34F1C200D509FC /* BookFinderTests.swift */; };
+		4F56814B2B34F6D300D509FC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F56814A2B34F6D300D509FC /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F56814B2B34F6D300D509FC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +115,9 @@
 			dependencies = (
 			);
 			name = BookFinder;
+			packageProductDependencies = (
+				4F56814A2B34F6D300D509FC /* Alamofire */,
+			);
 			productName = BookFinder;
 			productReference = 4F5681252B34F19700D509FC /* BookFinder.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +168,9 @@
 				Base,
 			);
 			mainGroup = 4F56811C2B34F19700D509FC;
+			packageReferences = (
+				4F5681492B34F6D300D509FC /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 4F5681262B34F19700D509FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -479,6 +487,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F5681492B34F6D300D509FC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F56814A2B34F6D300D509FC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F5681492B34F6D300D509FC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4F56811D2B34F19700D509FC /* Project object */;
 }
