@@ -19,6 +19,9 @@
 		4F5681512B34F8B100D509FC /* BookDetailsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681502B34F8B100D509FC /* BookDetailsData.swift */; };
 		4F5681532B34F8DD00D509FC /* VolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681522B34F8DD00D509FC /* VolumeData.swift */; };
 		4F5681552B34FA5200D509FC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681542B34FA5200D509FC /* Constant.swift */; };
+		4F5681582B34FD2900D509FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681572B34FD2800D509FC /* HomeViewController.swift */; };
+		4F56815B2B34FEA700D509FC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56815A2B34FEA700D509FC /* MainCoordinator.swift */; };
+		4F56815D2B34FEC000D509FC /* iOSCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56815C2B34FEC000D509FC /* iOSCoordinatorFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		4F5681502B34F8B100D509FC /* BookDetailsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsData.swift; sourceTree = "<group>"; };
 		4F5681522B34F8DD00D509FC /* VolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeData.swift; sourceTree = "<group>"; };
 		4F5681542B34FA5200D509FC /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		4F5681572B34FD2800D509FC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4F56815A2B34FEA700D509FC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		4F56815C2B34FEC000D509FC /* iOSCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCoordinatorFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,8 @@
 		4F5681272B34F19700D509FC /* BookFinder */ = {
 			isa = PBXGroup;
 			children = (
+				4F5681592B34FE7800D509FC /* Coordinator */,
+				4F5681562B34FC1200D509FC /* HomeModule */,
 				4F56814F2B34F88C00D509FC /* Models */,
 				4F56814C2B34F77200D509FC /* Networking */,
 				4F5681282B34F19700D509FC /* AppDelegate.swift */,
@@ -125,6 +133,23 @@
 				4F5681542B34FA5200D509FC /* Constant.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4F5681562B34FC1200D509FC /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+				4F5681572B34FD2800D509FC /* HomeViewController.swift */,
+			);
+			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		4F5681592B34FE7800D509FC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4F56815A2B34FEA700D509FC /* MainCoordinator.swift */,
+				4F56815C2B34FEC000D509FC /* iOSCoordinatorFactory.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,11 +260,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F5681552B34FA5200D509FC /* Constant.swift in Sources */,
+				4F56815D2B34FEC000D509FC /* iOSCoordinatorFactory.swift in Sources */,
 				4F56812D2B34F19700D509FC /* ViewController.swift in Sources */,
 				4F5681292B34F19700D509FC /* AppDelegate.swift in Sources */,
+				4F5681582B34FD2900D509FC /* HomeViewController.swift in Sources */,
 				4F56814E2B34F7A600D509FC /* GoogleBooksAPIManager.swift in Sources */,
 				4F56812B2B34F19700D509FC /* SceneDelegate.swift in Sources */,
 				4F5681512B34F8B100D509FC /* BookDetailsData.swift in Sources */,
+				4F56815B2B34FEA700D509FC /* MainCoordinator.swift in Sources */,
 				4F5681532B34F8DD00D509FC /* VolumeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
