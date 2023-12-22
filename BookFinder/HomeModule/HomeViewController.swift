@@ -7,11 +7,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class HomeViewController: UIViewController {
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.placeholder = "Buscar libros"
+        searchBar.placeholder = "Search Books..."
         return searchBar
     }()
 
@@ -26,6 +26,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Books Search"
+        self.view.backgroundColor = .white
         
         setupUI()
         setupConstraints()
@@ -54,8 +56,29 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+}
 
-    // MARK: - UISearchBarDelegate
+// MARK: - UITableView DataSource & Delegate
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return books.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath)
+        let book = books[indexPath.row]
+
+        cell.textLabel?.text = book.volumeInfo.title
+        cell.detailTextLabel?.text = "Autor/es: \(book.volumeInfo.authors.joined(separator: ", "))"
+
+        return cell
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension HomeViewController: UISearchBarDelegate {
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text, !query.isEmpty else { return }
 
@@ -67,25 +90,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self?.tableView.reloadData()
                 }
             case .failure(let error):
-                print("Error al buscar libros: \(error.localizedDescription)")
+                print("Error: \(error.localizedDescription)")
             }
         }
 
         searchBar.resignFirstResponder()
     }
 
-    // MARK: - UITableView DataSource & Delegate
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath)
-        let book = books[indexPath.row]
-
-        cell.textLabel?.text = book.volumeData.title
-        cell.detailTextLabel?.text = "Autor/es: \(book.volumeData.authors.joined(separator: ", "))"
-
-        return cell
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let query = searchBar.text, !query.isEmpty else { return }
+        
+        googleBooksAPI.searchBooks(query: query) { [weak self] result in
+            switch result {
+                case .success(let books):
+                    DispatchQueue.main.async {
+                        self?.books = books
+                        self?.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print("Error al buscar libros: \(error.localizedDescription)")
+            }
+        }
     }
 }

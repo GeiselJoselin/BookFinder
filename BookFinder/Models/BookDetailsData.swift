@@ -9,5 +9,5 @@ import Foundation
 
 struct BookDetailsData: Codable {
     let id: String
-    let volumeData: VolumeData
+    let volumeInfo: VolumeData
 }
