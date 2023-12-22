@@ -15,7 +15,8 @@ class CoordinatorFactory: ViewControllerFactory {
     
     func homeViewController() -> UIViewController {
         let googleAPI = GoogleBooksAPI()
-        let homeViewController = HomeViewController()
+        let viewModel = HomeViewModel(googleBooksAPI: googleAPI)
+        let homeViewController = HomeViewController(viewModel: viewModel)
         return homeViewController
     }
 }

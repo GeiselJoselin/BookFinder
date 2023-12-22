@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F506D4E2B363F450082898E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D4D2B363F450082898E /* HomeViewModel.swift */; };
+		4F506D502B3642E60082898E /* BookImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D4F2B3642E60082898E /* BookImageModel.swift */; };
 		4F5681292B34F19700D509FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681282B34F19700D509FC /* AppDelegate.swift */; };
 		4F56812B2B34F19700D509FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56812A2B34F19700D509FC /* SceneDelegate.swift */; };
 		4F56812D2B34F19700D509FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56812C2B34F19700D509FC /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 		4F5681582B34FD2900D509FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681572B34FD2800D509FC /* HomeViewController.swift */; };
 		4F56815B2B34FEA700D509FC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56815A2B34FEA700D509FC /* MainCoordinator.swift */; };
 		4F56815D2B34FEC000D509FC /* iOSCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56815C2B34FEC000D509FC /* iOSCoordinatorFactory.swift */; };
+		4F5681612B363B0600D509FC /* BookInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681602B363B0600D509FC /* BookInfoCell.swift */; };
+		4F5681632B363B3C00D509FC /* BookInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5681622B363B3C00D509FC /* BookInfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F506D4D2B363F450082898E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4F506D4F2B3642E60082898E /* BookImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImageModel.swift; sourceTree = "<group>"; };
 		4F5681252B34F19700D509FC /* BookFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5681282B34F19700D509FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F56812A2B34F19700D509FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +58,8 @@
 		4F5681572B34FD2800D509FC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4F56815A2B34FEA700D509FC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		4F56815C2B34FEC000D509FC /* iOSCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCoordinatorFactory.swift; sourceTree = "<group>"; };
+		4F5681602B363B0600D509FC /* BookInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoCell.swift; sourceTree = "<group>"; };
+		4F5681622B363B3C00D509FC /* BookInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookInfoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F506D4B2B363EB70082898E /* DetailBookModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailBookModule;
+			sourceTree = "<group>";
+		};
+		4F506D4C2B363F040082898E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4F506D4D2B363F450082898E /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4F56811C2B34F19700D509FC = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +117,7 @@
 		4F5681272B34F19700D509FC /* BookFinder */ = {
 			isa = PBXGroup;
 			children = (
+				4F506D4B2B363EB70082898E /* DetailBookModule */,
 				4F5681592B34FE7800D509FC /* Coordinator */,
 				4F5681562B34FC1200D509FC /* HomeModule */,
 				4F56814F2B34F88C00D509FC /* Models */,
@@ -131,6 +155,7 @@
 				4F5681502B34F8B100D509FC /* BookDetailsData.swift */,
 				4F5681522B34F8DD00D509FC /* VolumeData.swift */,
 				4F5681542B34FA5200D509FC /* Constant.swift */,
+				4F506D4F2B3642E60082898E /* BookImageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,7 +163,8 @@
 		4F5681562B34FC1200D509FC /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
-				4F5681572B34FD2800D509FC /* HomeViewController.swift */,
+				4F506D4C2B363F040082898E /* ViewModel */,
+				4F56815E2B363AD600D509FC /* View */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -150,6 +176,24 @@
 				4F56815C2B34FEC000D509FC /* iOSCoordinatorFactory.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4F56815E2B363AD600D509FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F5681572B34FD2800D509FC /* HomeViewController.swift */,
+				4F56815F2B363AE100D509FC /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F56815F2B363AE100D509FC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4F5681602B363B0600D509FC /* BookInfoCell.swift */,
+				4F5681622B363B3C00D509FC /* BookInfoCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F5681632B363B3C00D509FC /* BookInfoCell.xib in Resources */,
 				4F5681352B34F19A00D509FC /* LaunchScreen.storyboard in Resources */,
 				4F5681322B34F19A00D509FC /* Assets.xcassets in Resources */,
 				4F5681302B34F19700D509FC /* Main.storyboard in Resources */,
@@ -266,9 +311,12 @@
 				4F5681582B34FD2900D509FC /* HomeViewController.swift in Sources */,
 				4F56814E2B34F7A600D509FC /* GoogleBooksAPIManager.swift in Sources */,
 				4F56812B2B34F19700D509FC /* SceneDelegate.swift in Sources */,
+				4F506D4E2B363F450082898E /* HomeViewModel.swift in Sources */,
 				4F5681512B34F8B100D509FC /* BookDetailsData.swift in Sources */,
 				4F56815B2B34FEA700D509FC /* MainCoordinator.swift in Sources */,
 				4F5681532B34F8DD00D509FC /* VolumeData.swift in Sources */,
+				4F5681612B363B0600D509FC /* BookInfoCell.swift in Sources */,
+				4F506D502B3642E60082898E /* BookImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
