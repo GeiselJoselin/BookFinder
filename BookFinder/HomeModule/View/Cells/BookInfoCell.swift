@@ -27,5 +27,19 @@ class BookInfoCell: UITableViewCell {
         guard let volumeInfo else { return }
         bookTitleLabel.text = volumeInfo.title
         bookDescriptionLabel.text = "Autor/es: \(volumeInfo.authors.joined(separator: ", "))"
+        getImage(link: volumeInfo.imageLinks?.smallThumbnail ?? "")
+        
+    }
+
+    private func getImage(link: String) {
+        ImageFetcher.downloadImageFromURL(urlString: link) { image in
+            DispatchQueue.main.async { [weak self] in
+                if let image {
+                    self?.bookImage.image = image
+                } else {
+                    self?.bookImage.image = UIImage(named: "noCoverImage")
+                }
+            }
+        }
     }
 }
