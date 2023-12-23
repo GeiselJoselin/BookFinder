@@ -51,6 +51,32 @@ class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.books.count, 2, "ViewModel should contain fetched books")
     }
 
+    func testViewModelNoBooks() {
+        // Arrange
+        let mockGoogleBooksAPI = MockGoogleBooksAPI()
+        mockGoogleBooksAPI.noBooks = true
+        let viewModel = HomeViewModel(googleBooksAPI: mockGoogleBooksAPI)
+
+        // Act
+        viewModel.getInfoBooks(query: "test")
+
+        // Assert
+        XCTAssertEqual(viewModel.books.count, 0, "ViewModel should not contain fetched books")
+    }
+
+    func testViewModelFetchFail() {
+        // Arrange
+        let mockGoogleBooksAPI = MockGoogleBooksAPI()
+        mockGoogleBooksAPI.fail = true
+        let viewModel = HomeViewModel(googleBooksAPI: mockGoogleBooksAPI)
+
+        // Act
+        viewModel.getInfoBooks(query: "test")
+
+        // Assert
+        XCTAssertEqual(viewModel.books.count, 0, "ViewModel should not contain fetched books")
+    }
+
     func testViewModelDelegate() {
         // Arrange
         let expectation = expectation(description: "ViewModel delegate expectation")

@@ -37,8 +37,6 @@ class HomeViewControllerTests: XCTestCase {
 
     func testNoResultsViewHidden() {
         // Arrange
-        let mockViewModel = MockHomeViewModel()
-        let viewController = HomeViewController(viewModel: mockViewModel)
         viewController.loadViewIfNeeded()
 
         // Act & Assert
