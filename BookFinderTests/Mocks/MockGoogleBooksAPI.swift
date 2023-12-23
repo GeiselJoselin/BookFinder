@@ -26,11 +26,13 @@ class MockGoogleBooksAPI: GoogleBooksAPIProtocol {
             BookDetailsData(id: "1",
                             volumeInfo: VolumeData(title: "Book 1",
                                                    authors: ["Author 1"],
-                                                   description: "Description 1", imageLinks: nil)),
+                                                   description: "Description 1",
+                                                   imageLinks: nil)),
             BookDetailsData(id: "2",
                             volumeInfo: VolumeData(title: "Book 2",
                                                    authors: ["Author 2"],
-                                                   description: "Description 2", imageLinks: nil))
+                                                   description: "Description 2",
+                                                   imageLinks: nil))
         ]
         completion(.success(books))
     }

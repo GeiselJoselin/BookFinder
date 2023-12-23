@@ -17,11 +17,13 @@ class MockHomeViewModel: HomeViewModelProtocol {
             BookDetailsData(id: "3",
                             volumeInfo: VolumeData(title: "Book 3",
                                                    authors: ["Author 3"],
-                                                   description: "Description 3", imageLinks: nil)),
+                                                   description: "Description 3",
+                                                   imageLinks: nil)),
             BookDetailsData(id: "4",
                             volumeInfo: VolumeData(title: "Book 4",
                                                    authors: ["Author 4"],
-                                                   description: "Description 4", imageLinks: nil))
+                                                   description: "Description 4",
+                                                   imageLinks: nil))
         ]
         delegate?.didLoadData()
     }
