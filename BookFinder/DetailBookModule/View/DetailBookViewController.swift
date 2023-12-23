@@ -9,7 +9,7 @@ import UIKit
 
 class DetailBookViewController: UIViewController {
 
-    private let viewModel: DetailBookViewModelProtocol
+    private var viewModel: DetailBookViewModelProtocol
     
     lazy var bookImageView: UIImageView = {
         let imageView = UIImageView()
@@ -46,13 +46,14 @@ class DetailBookViewController: UIViewController {
     }()
 
     var bookInfo: VolumeData {
-        viewModel.volumeData
+        viewModel.bookData.volumeInfo
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupConstraints()
+        setupNavigationBar()
     }
 
     init(viewModel: DetailBookViewModelProtocol) {
@@ -62,6 +63,21 @@ class DetailBookViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupNavigationBar() {
+        let image = UIImage(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+        let favoriteButton = UIBarButtonItem(image: image,
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(toggleFavorite))
+        navigationItem.rightBarButtonItem = favoriteButton
+    }
+
+    @objc func toggleFavorite() {
+        viewModel.isFavorite.toggle()
+        navigationItem.rightBarButtonItem?.image = UIImage(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+        FavoritesManager.setFavoriteStatus(viewModel.isFavorite, for: viewModel.bookData.id)
     }
     
     func setupUI() {

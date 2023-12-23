@@ -8,15 +8,19 @@
 import Foundation
 
 protocol DetailBookViewModelProtocol {
-    var volumeData: VolumeData { get }
+    var bookData: BookDetailsData { get }
+    var isFavorite: Bool { get set }
 }
 
 
 class DetailBookViewModel: DetailBookViewModelProtocol {
     
-    let volumeData: VolumeData
+    let bookData: BookDetailsData
+    var isFavorite: Bool
     
-    init(volumeData: VolumeData) {
-        self.volumeData = volumeData
+    init(volumeData: BookDetailsData) {
+        self.bookData = volumeData
+        let isFavorite = FavoritesManager.getFavoriteStatus(for: volumeData.id)
+        self.isFavorite = isFavorite
     }
 }

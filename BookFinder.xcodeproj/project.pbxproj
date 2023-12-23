@@ -13,6 +13,7 @@
 		4F506D572B3655920082898E /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D562B3655920082898E /* DetailBookViewController.swift */; };
 		4F506D592B3655C00082898E /* DetailBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D582B3655C00082898E /* DetailBookViewModel.swift */; };
 		4F506D5C2B365D2F0082898E /* BookDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D5B2B365D2F0082898E /* BookDetailModel.swift */; };
+		4F506D5E2B366E750082898E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D5D2B366E750082898E /* UserDefaultsManager.swift */; };
 		4F5681292B34F19700D509FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681282B34F19700D509FC /* AppDelegate.swift */; };
 		4F56812B2B34F19700D509FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56812A2B34F19700D509FC /* SceneDelegate.swift */; };
 		4F56812D2B34F19700D509FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56812C2B34F19700D509FC /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		4F506D562B3655920082898E /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		4F506D582B3655C00082898E /* DetailBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewModel.swift; sourceTree = "<group>"; };
 		4F506D5B2B365D2F0082898E /* BookDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailModel.swift; sourceTree = "<group>"; };
+		4F506D5D2B366E750082898E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		4F5681252B34F19700D509FC /* BookFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5681282B34F19700D509FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F56812A2B34F19700D509FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				4F506D522B364F9F0082898E /* ImageFetcher.swift */,
+				4F506D5D2B366E750082898E /* UserDefaultsManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				4F5681532B34F8DD00D509FC /* VolumeData.swift in Sources */,
 				4F506D532B364F9F0082898E /* ImageFetcher.swift in Sources */,
 				4F5681612B363B0600D509FC /* BookInfoCell.swift in Sources */,
+				4F506D5E2B366E750082898E /* UserDefaultsManager.swift in Sources */,
 				4F506D502B3642E60082898E /* BookImageModel.swift in Sources */,
 				4F506D592B3655C00082898E /* DetailBookViewModel.swift in Sources */,
 				4F506D572B3655920082898E /* DetailBookViewController.swift in Sources */,

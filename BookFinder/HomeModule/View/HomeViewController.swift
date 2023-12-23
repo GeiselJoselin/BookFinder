@@ -70,13 +70,13 @@ class HomeViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: BookInfoCell.reuseIdentifier)
     }
     
-    private func openDetailBook(bookData: VolumeData) {
+    private func openDetailBook(bookData: BookDetailsData) {
         let factory = CoordinatorFactory()
         let coordinator = MainCoordinator(rootViewController: self.navigationController ?? UINavigationController(), viewControllerFactory: factory)
         coordinator.openDetailBook(bookData: bookData)
     }
 
-    func setUpConstraints() {
+    private func setUpConstraints() {
         // No Results image constraints
         NSLayoutConstraint.activate([
             noResultsImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -118,7 +118,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let book = viewModel.books[indexPath.row]
-        openDetailBook(bookData: book.volumeInfo)
+        openDetailBook(bookData: book)
     }
 }
 

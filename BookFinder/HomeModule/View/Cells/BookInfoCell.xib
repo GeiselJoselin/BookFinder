@@ -60,6 +60,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="noCoverImage" width="96" height="146"/>
+        <image name="noCoverImage" width="96.666664123535156" height="146.66667175292969"/>
     </resources>
 </document>

@@ -9,7 +9,7 @@ import UIKit
 
 protocol ViewControllerFactory {
     func homeViewController() -> UIViewController
-    func detailBookViewController(bookData: VolumeData) -> UIViewController
+    func detailBookViewController(bookData: BookDetailsData) -> UIViewController
 }
 
 class CoordinatorFactory: ViewControllerFactory {
@@ -21,7 +21,7 @@ class CoordinatorFactory: ViewControllerFactory {
         return homeViewController
     }
     
-    func detailBookViewController(bookData: VolumeData) -> UIViewController {
+    func detailBookViewController(bookData: BookDetailsData) -> UIViewController {
         let viewModel = DetailBookViewModel(volumeData: bookData)
         let detailBookViewController = DetailBookViewController(viewModel: viewModel)
         return detailBookViewController
