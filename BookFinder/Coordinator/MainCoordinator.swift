@@ -11,6 +11,7 @@ import UIKit
 protocol Coordinator {
     var rootViewController: UINavigationController { get set }
     func start()
+    func openDetailBook(bookData: VolumeData)
 }
 
 class MainCoordinator: Coordinator {
@@ -24,5 +25,9 @@ class MainCoordinator: Coordinator {
     
     func start() {
         rootViewController.pushViewController(viewControllerFactory.homeViewController(), animated: false)
+    }
+    
+    func openDetailBook(bookData: VolumeData) {
+        rootViewController.pushViewController(viewControllerFactory.detailBookViewController(bookData: bookData), animated: true)
     }
 }

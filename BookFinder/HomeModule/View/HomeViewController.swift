@@ -11,6 +11,15 @@ class HomeViewController: UIViewController {
     // MARK: - Variables
     private var viewModel: HomeViewModelProtocol
 
+    let noResultsImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "noResultsImage")
+        imageView.isHidden = true
+        return imageView
+    }()
+
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -55,12 +64,27 @@ class HomeViewController: UIViewController {
     private func setUpUI() {
         view.addSubview(searchBar)
         view.addSubview(tableView)
+        view.addSubview(noResultsImageView)
 
         let nib = UINib(nibName: "BookInfoCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: BookInfoCell.reuseIdentifier)
     }
     
+    private func openDetailBook(bookData: VolumeData) {
+        let factory = CoordinatorFactory()
+        let coordinator = MainCoordinator(rootViewController: self.navigationController ?? UINavigationController(), viewControllerFactory: factory)
+        coordinator.openDetailBook(bookData: bookData)
+    }
+
     func setUpConstraints() {
+        // No Results image constraints
+        NSLayoutConstraint.activate([
+            noResultsImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noResultsImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            noResultsImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
+            noResultsImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7)
+        ])
+
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -90,6 +114,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let book = viewModel.books[indexPath.row]
+        openDetailBook(bookData: book.volumeInfo)
+    }
 }
 
 // MARK: - UISearchBarDelegate
@@ -107,10 +137,6 @@ extension HomeViewController: UISearchBarDelegate {
 
         viewModel.getInfoBooks(query: query)
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 }
 
 // MARK: - HomeViewModelDelegate
@@ -118,7 +144,15 @@ extension HomeViewController: HomeViewModelDelegate {
     func didLoadData() {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
-            self.tableView.reloadData()
+
+            if self.viewModel.books.isEmpty {
+                self.noResultsImageView.isHidden = false
+                self.tableView.isHidden = true
+            } else {
+                self.noResultsImageView.isHidden = true
+                self.tableView.isHidden = false
+                self.tableView.reloadData()
+            }
         }
     }
 }

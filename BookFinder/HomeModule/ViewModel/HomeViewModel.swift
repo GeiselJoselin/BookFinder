@@ -34,10 +34,10 @@ final class HomeViewModel: HomeViewModelProtocol {
             switch result {
                 case .success(let books):
                     self.books = books
-                    self.delegate?.didLoadData()
                 case .failure(let error):
                     print("Error: \(error.localizedDescription)")
             }
+            self.delegate?.didLoadData()
         }
     }
 }
