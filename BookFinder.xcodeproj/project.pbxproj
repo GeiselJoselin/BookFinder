@@ -15,6 +15,10 @@
 		4F506D5E2B366E750082898E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D5D2B366E750082898E /* UserDefaultsManager.swift */; };
 		4F506D632B3675490082898E /* ShowFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D622B3675490082898E /* ShowFavoritesViewController.swift */; };
 		4F506D652B3675CF0082898E /* ShowFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D642B3675CF0082898E /* ShowFavoritesViewModel.swift */; };
+		4F506D682B3679E30082898E /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D672B3679E30082898E /* HomeViewModelTests.swift */; };
+		4F506D6A2B367A090082898E /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D692B367A090082898E /* HomeViewControllerTests.swift */; };
+		4F506D6D2B367A450082898E /* MockGoogleBooksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D6C2B367A450082898E /* MockGoogleBooksAPI.swift */; };
+		4F506D6F2B367B340082898E /* MockHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F506D6E2B367B340082898E /* MockHomeViewModel.swift */; };
 		4F5681292B34F19700D509FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5681282B34F19700D509FC /* AppDelegate.swift */; };
 		4F56812B2B34F19700D509FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56812A2B34F19700D509FC /* SceneDelegate.swift */; };
 		4F56812D2B34F19700D509FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56812C2B34F19700D509FC /* ViewController.swift */; };
@@ -53,6 +57,10 @@
 		4F506D5D2B366E750082898E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		4F506D622B3675490082898E /* ShowFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavoritesViewController.swift; sourceTree = "<group>"; };
 		4F506D642B3675CF0082898E /* ShowFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavoritesViewModel.swift; sourceTree = "<group>"; };
+		4F506D672B3679E30082898E /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		4F506D692B367A090082898E /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		4F506D6C2B367A450082898E /* MockGoogleBooksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGoogleBooksAPI.swift; sourceTree = "<group>"; };
+		4F506D6E2B367B340082898E /* MockHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewModel.swift; sourceTree = "<group>"; };
 		4F5681252B34F19700D509FC /* BookFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5681282B34F19700D509FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F56812A2B34F19700D509FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +168,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		4F506D662B3679710082898E /* HomeModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F506D672B3679E30082898E /* HomeViewModelTests.swift */,
+				4F506D692B367A090082898E /* HomeViewControllerTests.swift */,
+			);
+			path = HomeModuleTests;
+			sourceTree = "<group>";
+		};
+		4F506D6B2B367A340082898E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				4F506D6C2B367A450082898E /* MockGoogleBooksAPI.swift */,
+				4F506D6E2B367B340082898E /* MockHomeViewModel.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		4F56811C2B34F19700D509FC = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +228,8 @@
 		4F5681412B34F1C200D509FC /* BookFinderTests */ = {
 			isa = PBXGroup;
 			children = (
+				4F506D6B2B367A340082898E /* Mocks */,
+				4F506D662B3679710082898E /* HomeModuleTests */,
 				4F5681422B34F1C200D509FC /* BookFinderTests.swift */,
 			);
 			path = BookFinderTests;
@@ -397,6 +425,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F5681432B34F1C200D509FC /* BookFinderTests.swift in Sources */,
+				4F506D6A2B367A090082898E /* HomeViewControllerTests.swift in Sources */,
+				4F506D6D2B367A450082898E /* MockGoogleBooksAPI.swift in Sources */,
+				4F506D6F2B367B340082898E /* MockHomeViewModel.swift in Sources */,
+				4F506D682B3679E30082898E /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

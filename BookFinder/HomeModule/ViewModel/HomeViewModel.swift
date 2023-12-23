@@ -19,11 +19,11 @@ protocol HomeViewModelDelegate: AnyObject {
 
 final class HomeViewModel: HomeViewModelProtocol {
 
-    private let googleBooksAPI: GoogleBooksAPI
+    private let googleBooksAPI: GoogleBooksAPIProtocol
     weak var delegate: HomeViewModelDelegate?
     var books: [BookDetailsData] = []
 
-    init(googleBooksAPI: GoogleBooksAPI) {
+    init(googleBooksAPI: GoogleBooksAPIProtocol) {
         self.googleBooksAPI = googleBooksAPI
     }
     

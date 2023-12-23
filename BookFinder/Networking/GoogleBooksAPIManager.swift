@@ -7,7 +7,11 @@
 
 import Alamofire
 
-class GoogleBooksAPI {
+protocol GoogleBooksAPIProtocol {
+    func searchBooks(query: String, completion: @escaping (Result<[BookDetailsData], Error>) -> Void)
+}
+
+class GoogleBooksAPI: GoogleBooksAPIProtocol {
   func searchBooks(query: String, completion: @escaping (Result<[BookDetailsData], Error>) -> Void) {
     let parameters: [String: Any] = [
       "q": query,

@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     // MARK: - Variables
-    private var viewModel: HomeViewModelProtocol
+    private(set) var viewModel: HomeViewModelProtocol
 
     let noResultsImageView: UIImageView = {
         let imageView = UIImageView()
