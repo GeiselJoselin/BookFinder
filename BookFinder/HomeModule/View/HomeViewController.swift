@@ -33,12 +33,10 @@ class HomeViewController: UIViewController {
         return tableView
     }()
 
-    // Agrega un inicializador requerido
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Tu constructor personalizado
     init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -52,6 +50,11 @@ class HomeViewController: UIViewController {
         setUpUI()
         setUpConstraints()
         setUpDelegates()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
     }
 
     private func setUpDelegates() {
@@ -76,6 +79,12 @@ class HomeViewController: UIViewController {
         coordinator.openDetailBook(bookData: bookData)
     }
 
+    private func openFavoritesBooks() {
+        let factory = CoordinatorFactory()
+        let coordinator = MainCoordinator(rootViewController: self.navigationController ?? UINavigationController(), viewControllerFactory: factory)
+        coordinator.showFavorites()
+    }
+
     private func setUpConstraints() {
         // No Results image constraints
         NSLayoutConstraint.activate([
@@ -95,6 +104,20 @@ class HomeViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+
+    private func setupNavigationBar() {
+        guard !FavoritesManager.getFavoriteBooks().isEmpty else { return }
+        let image = UIImage(systemName: "star.fill")
+        let favoriteButton = UIBarButtonItem(image: image,
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(showFavorites))
+        navigationItem.leftBarButtonItem = favoriteButton
+    }
+
+    @objc func showFavorites() {
+        openFavoritesBooks()
     }
 }
 

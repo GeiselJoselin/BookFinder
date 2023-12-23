@@ -10,6 +10,7 @@ import UIKit
 protocol ViewControllerFactory {
     func homeViewController() -> UIViewController
     func detailBookViewController(bookData: BookDetailsData) -> UIViewController
+    func showFavoritesViewController() -> UIViewController
 }
 
 class CoordinatorFactory: ViewControllerFactory {
@@ -25,5 +26,12 @@ class CoordinatorFactory: ViewControllerFactory {
         let viewModel = DetailBookViewModel(volumeData: bookData)
         let detailBookViewController = DetailBookViewController(viewModel: viewModel)
         return detailBookViewController
+    }
+
+    func showFavoritesViewController() -> UIViewController {
+        let books = FavoritesManager.getFavoriteBooks()
+        let viewModel = ShowFavoritesViewModel(books: books)
+        let showFavoritesViewController = ShowFavoritesViewController(viewModel: viewModel)
+        return showFavoritesViewController
     }
 }

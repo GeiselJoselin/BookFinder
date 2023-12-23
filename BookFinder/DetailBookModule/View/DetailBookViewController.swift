@@ -77,7 +77,7 @@ class DetailBookViewController: UIViewController {
     @objc func toggleFavorite() {
         viewModel.isFavorite.toggle()
         navigationItem.rightBarButtonItem?.image = UIImage(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
-        FavoritesManager.setFavoriteStatus(viewModel.isFavorite, for: viewModel.bookData.id)
+        FavoritesManager.saveFavoriteBook(viewModel.bookData)
     }
     
     func setupUI() {

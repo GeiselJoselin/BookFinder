@@ -20,7 +20,7 @@ class DetailBookViewModel: DetailBookViewModelProtocol {
     
     init(volumeData: BookDetailsData) {
         self.bookData = volumeData
-        let isFavorite = FavoritesManager.getFavoriteStatus(for: volumeData.id)
+        let isFavorite = FavoritesManager.isBookFavorite(bookId: volumeData.id)
         self.isFavorite = isFavorite
     }
 }

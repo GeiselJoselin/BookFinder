@@ -12,6 +12,7 @@ protocol Coordinator {
     var rootViewController: UINavigationController { get set }
     func start()
     func openDetailBook(bookData: BookDetailsData)
+    func showFavorites()
 }
 
 class MainCoordinator: Coordinator {
@@ -29,5 +30,9 @@ class MainCoordinator: Coordinator {
     
     func openDetailBook(bookData: BookDetailsData) {
         rootViewController.pushViewController(viewControllerFactory.detailBookViewController(bookData: bookData), animated: true)
+    }
+
+    func showFavorites() {
+        rootViewController.pushViewController(viewControllerFactory.showFavoritesViewController(), animated: true)
     }
 }

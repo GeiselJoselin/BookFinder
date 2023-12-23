@@ -8,16 +8,32 @@
 import Foundation
 
 struct FavoritesManager {
-    static let favoritesKey = "FavoriteBooks"
+    static let favoritesBooksKey = "FavoriteBooks"
 
-    static func getFavoriteStatus(for bookId: String) -> Bool {
-        let favorites = UserDefaults.standard.dictionary(forKey: favoritesKey) as? [String: Bool] ?? [:]
-        return favorites[bookId] ?? false
+    static func isBookFavorite(bookId: String) -> Bool {
+        let favoriteBooks = getFavoriteBooks()
+        return favoriteBooks.contains { $0.id == bookId }
     }
 
-    static func setFavoriteStatus(_ isFavorite: Bool, for bookId: String) {
-        var favorites = UserDefaults.standard.dictionary(forKey: favoritesKey) as? [String: Bool] ?? [:]
-        favorites[bookId] = isFavorite
-        UserDefaults.standard.setValue(favorites, forKey: favoritesKey)
+    static func getFavoriteBooks() -> [BookDetailsData] {
+        if let data = UserDefaults.standard.data(forKey: favoritesBooksKey),
+           let favoriteBooks = try? JSONDecoder().decode([BookDetailsData].self, from: data) {
+            return favoriteBooks
+        }
+        return []
+    }
+
+    static func saveFavoriteBook(_ book: BookDetailsData) {
+        var favoriteBooks = getFavoriteBooks()
+
+        if let index = favoriteBooks.firstIndex(where: { $0.id == book.id }) {
+            favoriteBooks.remove(at: index)
+        } else {
+            favoriteBooks.append(book)
+        }
+        
+        if let encodedData = try? JSONEncoder().encode(favoriteBooks) {
+            UserDefaults.standard.set(encodedData, forKey: favoritesBooksKey)
+        }
     }
 }
