@@ -181,20 +181,20 @@
 		4F5681272B34F19700D509FC /* BookFinder */ = {
 			isa = PBXGroup;
 			children = (
-				4F506D5F2B36752A0082898E /* FavoritesModule */,
-				4F506D512B364F8B0082898E /* Utilities */,
-				4F506D4B2B363EB70082898E /* DetailBookModule */,
+				4F5681282B34F19700D509FC /* AppDelegate.swift */,
+				4F5681312B34F19A00D509FC /* Assets.xcassets */,
 				4F5681592B34FE7800D509FC /* Coordinator */,
+				4F506D4B2B363EB70082898E /* DetailBookModule */,
+				4F506D5F2B36752A0082898E /* FavoritesModule */,
 				4F5681562B34FC1200D509FC /* HomeModule */,
+				4F5681362B34F19A00D509FC /* Info.plist */,
+				4F5681332B34F19A00D509FC /* LaunchScreen.storyboard */,
+				4F56812E2B34F19700D509FC /* Main.storyboard */,
 				4F56814F2B34F88C00D509FC /* Models */,
 				4F56814C2B34F77200D509FC /* Networking */,
-				4F5681282B34F19700D509FC /* AppDelegate.swift */,
 				4F56812A2B34F19700D509FC /* SceneDelegate.swift */,
+				4F506D512B364F8B0082898E /* Utilities */,
 				4F56812C2B34F19700D509FC /* ViewController.swift */,
-				4F56812E2B34F19700D509FC /* Main.storyboard */,
-				4F5681312B34F19A00D509FC /* Assets.xcassets */,
-				4F5681332B34F19A00D509FC /* LaunchScreen.storyboard */,
-				4F5681362B34F19A00D509FC /* Info.plist */,
 			);
 			path = BookFinder;
 			sourceTree = "<group>";
