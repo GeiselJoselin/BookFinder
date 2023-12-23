@@ -107,7 +107,10 @@ class HomeViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        guard !FavoritesManager.getFavoriteBooks().isEmpty else { return }
+        guard !FavoritesManager.getFavoriteBooks().isEmpty else {
+            navigationItem.leftBarButtonItem?.isHidden = true
+            return
+        }
         let image = UIImage(systemName: "star.fill")
         let favoriteButton = UIBarButtonItem(image: image,
                                              style: .plain,
